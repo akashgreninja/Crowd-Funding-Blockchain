@@ -57,7 +57,13 @@ contract CrowdFunding {
     }
     function getDoner(uint256 _id) view public returns(address[] memory ,uint256[] memory ){
         return (campaigns[_id].donators,campaigns[_id].donations);
+
+    
     }
+    /**
+     * @dev here below we need to return an array of all campaigns so what we are doing is 
+     * first we are creating a memeory array variable called _campaigns then we are assigning the no of campaigns to it now we have a well defined no of arrays now we loop anfd then to the campaign array we are getting that specific data and putting it in the array refer the struct and the mapping function 
+     */
     function getCampaigns()public view returns (Campaign[] memory){
         Campaign[] memory _campaigns = new Campaign[](noOfCampaign);
         for (uint i = 0; i < noOfCampaign; i++) {
